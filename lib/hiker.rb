@@ -12,8 +12,13 @@ class Hiker
 
   # make @snacks.keys.indclude helper method if
   # time allows
+  def item_packed?(item)
+    snack_keys = @snacks.keys
+    snack_keys.include?(item)
+  end
+
   def pack(item, quantity)
-    if @snacks.keys.include?(item)
+    if item_packed?(item)
       @snacks[item] += quantity
     else
       @snacks[item] = quantity
