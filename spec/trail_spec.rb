@@ -13,4 +13,10 @@ RSpec.describe Trail do
       expect(trail1.level).to eq(:easy)
     end
   end
+  describe '#length' do
+    it 'returns the length of the trail as a float' do
+      expect(trail1.name).to eq(2.2)
+      expect(trail1.name).to be_an_instance_of(Float)
+    end
+  end
 end
