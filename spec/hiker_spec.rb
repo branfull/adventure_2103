@@ -21,6 +21,18 @@ RSpec.describe Hiker do
       expect(hiker.parks_visited).to eq([])
     end
   end
+  describe '#item_packed?' do
+    it 'returns true if an item has already been packed' do
+      hiker = Hiker.new('Dora', :moderate)
+      hiker.pack('water', 1)
+      expect(hiker.item_packed?('water')).to eq(true)
+    end
+    it 'returns false if an item has already been packed' do
+      hiker = Hiker.new('Dora', :moderate)
+      hiker.pack('water', 1)
+      expect(hiker.item_packed?('trail mix')).to eq(false)
+    end
+  end
   describe '#pack' do
     it 'adds an item and quantitiy to the snacks collection' do
       hiker = Hiker.new('Dora', :moderate)
