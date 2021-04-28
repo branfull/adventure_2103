@@ -7,4 +7,8 @@ class Hiker
     @experience_level = experience_level
     @snacks = {}
   end
+
+  def pack(item, quantity)
+    @snacks[item] = quantity
+  end
 end
