@@ -28,6 +28,12 @@ class Park
     end
   end
 
+  def trail_names_at_level(experience_level)
+    trails_at_level(experience_level).map do |trail|
+      trail.name
+    end
+  end
+
   def trail_levels_in_park
     @trails.map do |trail|
       trail.level
