@@ -9,4 +9,10 @@ class Park
   def add_trail(trail)
     @trails.push(trail)
   end
+
+  def trails_shorter_than(distance)
+    @trails.find_all do |trail|
+      trail.length < distance
+    end
+  end
 end
