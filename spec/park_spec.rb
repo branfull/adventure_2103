@@ -1,4 +1,5 @@
 require './lib/park'
+require './lib/trail'
 
 RSpec.describe Park do
   describe '#initialize' do
@@ -15,9 +16,12 @@ RSpec.describe Park do
   end
   describe '#add_trail' do
     park1 = Park.new('Capitol Reef')
-    it 'adds a trail to the trails array'
+    it 'adds a trail to the trails array' do
+      trail1 = Trail.new({ name: 'Grand Wash', length: '2.2 miles', level: :easy })
+      trail2 = Trail.new({ name: 'Cohab Canyon', length: '1.7 miles', level: :moderate })
       park1.add_trail(trail1)
       park1.add_trail(trail2)
       expect(park1.trails).to eq([trail1, trail2])
+    end
   end
 end
