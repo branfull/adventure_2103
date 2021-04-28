@@ -13,4 +13,11 @@ RSpec.describe Park do
       expect(park1.trails).to eq([])
     end
   end
+  describe '#add_trail' do
+    park1 = Park.new('Capitol Reef')
+    it 'adds a trail to the trails array'
+      park1.add_trail(trail1)
+      park1.add_trail(trail2)
+      expect(park1.trails).to eq([trail1, trail2])
+  end
 end
