@@ -39,4 +39,10 @@ class Park
       trail.level
     end.uniq
   end
+
+  def trails_by_level
+    trail_levels_in_park.each_with_object({}) do |level, hash|
+      hash[level] = trail_names_at_level(level)
+    end
+  end
 end
