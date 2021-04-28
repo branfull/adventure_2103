@@ -27,4 +27,10 @@ class Park
       trail.level == experience_level
     end
   end
+
+  def trail_levels_in_park
+    @trails.map do |trail|
+      trail.level
+    end.uniq
+  end
 end
