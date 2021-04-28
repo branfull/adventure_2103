@@ -1,4 +1,5 @@
 require './lib/hiker'
+require './lib/park'
 
 RSpec.describe Hiker do
   describe '#initialize' do
@@ -37,6 +38,8 @@ RSpec.describe Hiker do
   describe '#visit' do
     hiker = Hiker.new('Dora', :moderate)
     it 'adds a park to the list of parks visited' do
+      park1 = Park.new('Capitol Reef')
+      park2 = Park.new('Bryce Canyon')
       hiker.visit(park1)
       hiker.visit(park2)
       expect(hiker.parks_visited).to eq([park1, park2])
