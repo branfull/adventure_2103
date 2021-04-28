@@ -78,4 +78,14 @@ RSpec.describe Hiker do
       expect(hiker.favorite_snack).to eq('apple')
     end
   end
+  describe '#favorite_snack_object' do
+    hiker = Hiker.new('Dora', :moderate)
+    hiker.pack('water', 2)
+    hiker.pack('trail mix', 1)
+    hiker.pack('apple', 4)
+    hiker.pack('carrot', 3)
+    it 'returns item name-quantity pair of the snack of greatest quantity' do
+      expect(hiker.favorite_snack_object).to eq(['apple', 4])
+    end
+  end
 end
