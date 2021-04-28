@@ -23,5 +23,12 @@ RSpec.describe Hiker do
       hiker.pack('trail mix', 3)
       expect(hiker.snacks).to eq({ 'water' => 1, 'trail mix' => 3 })
     end
+    it 'updates the quantity of an item if item is already in the collection' do
+      hiker = Hiker.new('Dora', :moderate)
+      hiker.pack('water', 1)
+      hiker.pack('trail mix', 3)
+      hiker.pack('water', 1)
+      expect(hiker.snacks).to eq({ 'water' => 2, 'trail mix' => 3 })
+    end
   end
 end
