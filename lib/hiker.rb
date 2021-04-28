@@ -10,8 +10,6 @@ class Hiker
     @parks_visited = []
   end
 
-  # make @snacks.keys.indclude helper method if
-  # time allows
   def item_packed?(item)
     snack_keys = @snacks.keys
     snack_keys.include?(item)
